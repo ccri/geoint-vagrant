@@ -1,4 +1,4 @@
 #!/bin/sh
 
-sh /vagrant/data/vagrant-hosts.sh
+sh /vagrant/data/vagrant-ssh.sh
 
