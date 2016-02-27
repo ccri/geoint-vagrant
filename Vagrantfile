@@ -10,6 +10,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.hostmanager.enabled = true
 
+  config.vm.provision "shell",
+    inline: "sed -ri 's|127.0.0.1([[:space:]]+).*localhost |127.0.0.1\\1localhost |' /etc/hosts"
+
   config.vm.define "head" do |head|
     head.vm.provision "shell", path: "data/vagrant-head.sh"
     head.vm.host_name = "head"
